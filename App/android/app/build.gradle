@@ -141,6 +141,8 @@ android {
         versionCode 2
         versionName "1.0.1"
         multiDexEnabled true
+        testBuildType System.getProperty('testBuildType', 'debug')  // This will later be used to control the test apk build type
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
     splits {
         abi {
@@ -218,6 +220,8 @@ dependencies {
     implementation 'com.android.support:multidex:1.0.3'
     implementation platform('com.google.firebase:firebase-bom:26.7.0')
 
+    androidTestImplementation('com.wix:detox:+')
+    
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
       exclude group:'com.facebook.fbjni'
     }
