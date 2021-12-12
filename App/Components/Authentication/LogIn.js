@@ -114,7 +114,7 @@ export default class LogIn extends Component {
 
     render(){
         return(
-            <SafeAreaView style={styles.safeContainer}>
+            <SafeAreaView style={styles.safeContainer} testID="loginScreen">
                 <ScrollView contentContainerStyle={{ flexGrow: 1, justifyContent: 'center' }}>
                     <View style = {styles.container}>
                         <View style={styles.logo}>
@@ -128,6 +128,7 @@ export default class LogIn extends Component {
                                 placeholderTextColor = "grey"
                                 onChangeText={email => this.setState({ email })}
                                 value={this.state.email}
+                                testID='loginEmail'
                             />
                             <TextInput
                                 secureTextEntry
@@ -137,6 +138,7 @@ export default class LogIn extends Component {
                                 placeholderTextColor = "grey"
                                 onChangeText={password => this.setState({ password })}
                                 value={this.state.password}
+                                testID='loginPassword'
                             />
 
                         { this.state.error ?
@@ -144,7 +146,7 @@ export default class LogIn extends Component {
                                 {this.state.error}
                             </Text> : <Text/>}
                             <View >
-                                <Button  style={styles.buttonMessage} titleStyle={{color:'white',fontWeight:'normal'}} buttonStyle= {styles.mybutton} titleStyle = {{}} title="Login" onPress={this.LoginUser}/>
+                                <Button  style={styles.buttonMessage} titleStyle={{color:'white',fontWeight:'normal'}} buttonStyle= {styles.mybutton} titleStyle = {{}} title="Login" onPress={this.LoginUser} testID='loginButton'/>
 
                                 <Button
                                     titleStyle={{color:'white',fontWeight:'normal'}}

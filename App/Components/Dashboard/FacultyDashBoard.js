@@ -160,7 +160,7 @@ export default class FacultyDashBoard extends Component {
 
     render(){
         return(
-            <SafeAreaView style={styles.safeContainer}>
+            <SafeAreaView style={styles.safeContainer} testID='dashboard'>
                 <ScrollView>
                     <View style={styles.grid}>
                         {this.state.courseList.map((item,i)=> (
