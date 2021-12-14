@@ -4,7 +4,7 @@ import moment from 'moment';
 import database from '@react-native-firebase/database';
 import QuizFacultyPage from './QuizFacultyPage';
 import QuizStudentPage from './QuizStudentPage';
-
+import perf from '@react-native-firebase/perf';
 export default class QuizHomePage extends Component{
     constructor(props) {
         super(props);
@@ -26,7 +26,7 @@ export default class QuizHomePage extends Component{
         })
     }
 
-    ifCurrentQuiz = ()=>{
+    ifCurrentQuiz = (trace)=>{
         database()
             .ref('InternalDb/KBC/')
             .orderByChild('passCode')
@@ -46,6 +46,8 @@ export default class QuizHomePage extends Component{
                             quizType: values['quizType'],
                             questionCount : values['questionCount']
                         })
+                        trace.putMetric('quizDetectionGap',curr-startTime)
+                        console.log('metric logged quizDetectionGap ',curr-startTime)
                     }
                     else{
                         this.setState({
@@ -59,11 +61,25 @@ export default class QuizHomePage extends Component{
             })
     }
 
-    componentDidMount(){
-        this.ifCurrentQuiz()
+    async componentDidMount(){
+        if (this.state.currentQuiz == false){
+        const trace = await perf().startTrace('quizPageTap');
+        console.log("Started trace");
+        // Define trace meta details
+        this.ifCurrentQuiz(trace);
+        trace.putAttribute('courseCode',String(this.state.course.courseCode));
+        trace.putAttribute('userType',String(this.state.type));
+        trace.putAttribute('currentQuiz',String(this.state.currentQuiz))
+        // Stop the trace
+        await trace.stop();
+        }
+        else{
+            this.ifCurrentQuiz(null);
+        }
     }
 
     render(){
+        console.log("State of current quiz", this.state.currentQuiz)
         return(
             <SafeAreaView style={styles.safeContainer}>
                 {this.state.type === "faculty" ?
