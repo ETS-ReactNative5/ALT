@@ -39,12 +39,12 @@ export default class TabNavigator extends Component{
                             course: this.state.course
                         }}
                 />
-                <Tab.Screen name = "Quiz DashBoard"
+                <Tab.Screen name = "Quiz DashBoard" 
                         component={QuizStack}
                         options={{
                             tabBarLabel: 'Quiz',
                             tabBarIcon: ({focused}) =>(
-                                <Icon name='gamepad' type='font-awesome' size={25} color={focused?"tomato":"grey"}/>
+                                <Icon name='gamepad' type='font-awesome' size={25} color={focused?"tomato":"grey"} testID="quizScreenButton"/>
                             ),
                         }}
                         initialParams={{

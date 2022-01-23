@@ -115,7 +115,7 @@ export default class QuizStudentPage extends Component {
             console.log("Debugging");
             console.log(this.props.quizType);
         return(
-            <SafeAreaView style={styles.safeContainer}>
+            <SafeAreaView style={styles.safeContainer} testID='quizStudentPage'>
             {   this.props.currentQuiz === false
                     ?
                     this.state.quizResults === false
@@ -168,7 +168,7 @@ export default class QuizStudentPage extends Component {
                                         </Text> : <Text/>
                                     }
                                     <View>
-                                        <Button style={styles.buttonMessage} titleStyle={{color:'white',fontWeight:'normal'}} buttonStyle={styles.mybutton} title="Submit" onPress={this.submitResponse}/>
+                                        <Button style={styles.buttonMessage} testID='submitButton' titleStyle={{color:'white',fontWeight:'normal'}} buttonStyle={styles.mybutton} title="Submit" onPress={this.submitResponse}/>
                                     </View>
                                 </View>
                             </View>

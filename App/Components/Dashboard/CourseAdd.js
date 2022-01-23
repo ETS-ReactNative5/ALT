@@ -29,7 +29,7 @@ export default class  CourseAdd extends Component {
 
     render(){
         return (
-            <View>
+            <View testID='courseAddButton'>
 
                 <View style={{padding:10}}>
                     {Platform.OS==='ios'

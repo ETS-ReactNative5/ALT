@@ -112,7 +112,7 @@ export default class  CourseCard extends Component{
                 borderRadius={20}
                 style={styles.container}
             >
-                <Avatar
+                <Avatar testID="courseCard"
                     onPress={()=>{
                         this.props.navigation.navigate('Course', {
                             type : this.props.type,

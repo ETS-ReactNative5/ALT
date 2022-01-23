@@ -262,7 +262,7 @@ export default class QuizFacultyPage extends Component{
     render(){
         if(!this.state.loading){
         return(
-            <SafeAreaView style={styles.safeContainer}>
+            <SafeAreaView style={styles.safeContainer} testID='quizFacultyPage'>
 
                 { this.props.currentQuiz === false
                 ?
@@ -347,7 +347,7 @@ export default class QuizFacultyPage extends Component{
 
                             <View style>
                                 <View style={{paddingTop:10, marginTop:10}}>
-                                    <Button buttonStyle={styles.mybutton} titleStyle={{color:'white',fontWeight:'normal'}} title="Begin" onPress={this.startKBC} />
+                                    <Button testID='beginButton' buttonStyle={styles.mybutton} titleStyle={{color:'white',fontWeight:'normal'}} title="Begin" onPress={this.startKBC} />
                                 </View>
                             </View>
                         </View>
@@ -378,7 +378,7 @@ export default class QuizFacultyPage extends Component{
                                         ? Dimensions.window.width-50
                                         :"100%"
                                 }]}>
-                                <Button buttonStyle={styles.mybutton}
+                                <Button buttonStyle={styles.mybutton} testID='startAnotherQuiz'
                                         titleStyle={{color:'white',fontWeight:'normal'}}
                                         style={styles.buttonMessage}
                                         title={"Start Another Quiz"}

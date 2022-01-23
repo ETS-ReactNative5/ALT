@@ -60,7 +60,7 @@ export default class FormAddCourse extends Component {
 
     render(){
         return(
-            <View style = {styles.container}>
+            <View style = {styles.container} testID='formAddCourse'>
                 <Text style={styles.textCreate}>
                     New Course
                 </Text>
@@ -71,6 +71,7 @@ export default class FormAddCourse extends Component {
                     placeholderTextColor = "grey"
                     onChangeText={courseName => this.setState({ courseName })}
                     value={this.state.courseName}
+                    testID='courseNameInput'
                 />
                 <TextInput
                     style={styles.textInput}
@@ -79,6 +80,7 @@ export default class FormAddCourse extends Component {
                     placeholderTextColor = "grey"
                     onChangeText={courseCode => this.setState({ courseCode })}
                     value={this.state.courseCode}
+                    testID='courseCodeInput'
                 />
                 <TextInput
                     style={styles.textInput}
@@ -87,6 +89,7 @@ export default class FormAddCourse extends Component {
                     placeholderTextColor = "grey"
                     onChangeText={room => this.setState({ room })}
                     value={this.state.room}
+                    testID='roomInput'
                 />
 
                 { this.state.error ?
@@ -94,7 +97,7 @@ export default class FormAddCourse extends Component {
                         {this.state.error}
                     </Text> : <Text/>}
 
-                <Button buttonStyle={styles.create} title="Create" titleStyle={{color:'white',fontWeight:'normal'}} onPress={this.CreateCourse} />
+                <Button buttonStyle={styles.create} title="Create" titleStyle={{color:'white',fontWeight:'normal'}} onPress={this.CreateCourse} testID='createCourseButton'/>
 
             </View>
         );

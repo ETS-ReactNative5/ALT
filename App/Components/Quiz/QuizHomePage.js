@@ -67,7 +67,7 @@ export default class QuizHomePage extends Component{
         return(
             <SafeAreaView style={styles.safeContainer}>
                 {this.state.type === "faculty" ?
-                    <QuizFacultyPage
+                    <QuizFacultyPage testID='quizFacultyPage'
                         currentQuiz = {this.state.currentQuiz}
                         currentDuration = {this.state.currentDuration}
                         user = {this.state.user}

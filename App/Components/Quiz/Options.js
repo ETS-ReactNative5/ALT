@@ -13,7 +13,7 @@ export default class Options extends Component{
         return(
             <View style={styles.container}>
                 {this.state.values.map((value, i)=> (
-                    <Avatar
+                    <Avatar testID={'option'+value}
                         key = {i}
                         size="large"
                         icon={ this.props.icon === value

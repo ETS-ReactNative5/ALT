@@ -20,7 +20,7 @@ export default class AnnouncementStack extends Component {
 
         return (
             <Stack.Navigator>
-                <Stack.Screen name='Announcements'
+                <Stack.Screen name='Announcements' testID='announcementScreen'
                        component={Announcement}
                        options={{
                            headerTitle : null,

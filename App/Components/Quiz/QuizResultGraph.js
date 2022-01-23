@@ -111,7 +111,7 @@ export default class QuizResultGraph extends Component {
         };
 
         return (
-            <ScrollView>
+            <ScrollView testID='quizResultGraph'>
                 <Text style={styles.body}>
                     Results : Quiz {this.state.quizNumber} ({this.props.date.split(" ")[0]})
                 </Text>
