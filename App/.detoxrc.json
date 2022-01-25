@@ -5,7 +5,9 @@
   "apps": {
     "ios": {
       "type": "ios.app",
-      "binaryPath": "SPECIFY_PATH_TO_YOUR_APP_BINARY"
+      "binaryPath": "ios/build/Build/Products/Release-iphonesimulator/TLS.app",
+      "build": "xcodebuild -project ios/TLS.xcodeproj -scheme TLS -sdk iphonesimulator -derivedDataPath ios/build"
+
     },
     "android": {
       "type": "android.apk",
@@ -17,7 +19,7 @@
     "simulator": {
       "type": "ios.simulator",
       "device": {
-        "type": "iPhone 11"
+        "type": "iPhone 12"
       }
     },
     "emulator": {

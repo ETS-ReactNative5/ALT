@@ -1,4 +1,4 @@
-const config = require('../.detoxrc.json').configurations['android'];
+const config = require('../.detoxrc.json').configurations['ios'];
 import detox from 'detox';
 import {studentLogin, facultyLogin} from './testFunctions';
 
