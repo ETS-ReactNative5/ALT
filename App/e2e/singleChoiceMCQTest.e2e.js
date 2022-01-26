@@ -5,7 +5,7 @@ import {studentLogin, facultyLogin, createSingleChoiceMCQ, answerSingleChoiceMCQ
 describe('singleChoiceMCQ', () => {
   beforeAll(async () => {
     global.studentDevices =[]
-    global.noOfStudentDevices = 1
+    global.noOfStudentDevices = 2
     for (let i = 0; i < global.noOfStudentDevices; i++) {
       global.studentDevices.push(await detox.init(config, {initGlobals: false}));
     }
