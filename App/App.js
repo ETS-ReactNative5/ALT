@@ -7,12 +7,16 @@ import IconI from 'react-native-vector-icons/MaterialIcons';
 import MainNavigator from './Components/Navigation/MainNavigator';
 import NotifiactionCentre from './NotificationCenter';
 import {BackHandler} from 'react-native';
+import { YellowBox } from 'react-native';
+console.disableYellowBox = true;
+YellowBox.ignoreWarnings([
+  'Non-serializable values were found in the navigation state',
+]);
+
 
 IconF.loadFont();
 IconM.loadFont();
 IconI.loadFont();
-
-console.disableYellowBox = true;
 
 const App: FC = () => {
   GoogleSignin.configure({
