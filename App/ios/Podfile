@@ -121,12 +121,3 @@ target 'TLS' do
 
 
 end
-
-target 'TLS-tvOS' do
-  # Pods for TLS-tvOS
-
-  target 'TLS-tvOSTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-end
