@@ -40,6 +40,7 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = TLS/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = TLS/main.m; sourceTree = "<group>"; };
 		2DD3240D36455D4F29E6A119 /* libPods-TLS-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TLS-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		30F4802727C01934006C60BB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4DA35EA13167F9AAC586D61D /* libPods-TLS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TLS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5178CD80B26280E4FF86CF86 /* Pods-TLS-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TLS-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-TLS-tvOSTests/Pods-TLS-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		5275CEB45733BD6B91192931 /* Pods-TLS-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TLS-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-TLS-tvOS/Pods-TLS-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -104,6 +105,7 @@
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				FBC2398527D40ADE009314AA /* GoogleService-Info.plist */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
+				30F4802727C01934006C60BB /* GoogleService-Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
