@@ -134,7 +134,7 @@ export default class StudentCard extends Component{
                         <Avatar
                             title = {this.createTitle(this.props.student.name, this.props.student.email)}
                             titleStyle = {{color:"white", fontSize:20}}
-                            overlayContainerStyle = {{backgroundColor: 'tomato'}}
+                            overlayContainerStyle = {{backgroundColor: '#f15c5e'}}
                             size = "medium"
                             rounded
                         />
@@ -204,7 +204,7 @@ export default class StudentCard extends Component{
                     <Avatar
                         title = {this.createTitle(this.props.student.name, this.props.student.email)}
                         titleStyle = {{color:"white", fontSize:20}}
-                        overlayContainerStyle = {{backgroundColor: 'tomato'}}
+                        overlayContainerStyle = {{backgroundColor: '#f15c5e'}}
                         size = "medium"
                         rounded
                     />

@@ -288,10 +288,10 @@ export default class QuizFacultyPage extends Component{
                             borderColor={'#383030'}
                             // hasPadding
                             options={[
-                                { label: "Single-Correct", value: "mcq", activeColor: 'tomato'},
-                                { label: "Multi-Correct", value: "multicorrect" ,activeColor: 'tomato'},
-                                { label: "Numeric", value: "numeric" ,activeColor: 'tomato'},
-                                { label: "Text", value: "alphaNumerical" ,activeColor: 'tomato'},
+                                { label: "Single-Correct", value: "mcq", activeColor: '#f15c5e'},
+                                { label: "Multi-Correct", value: "multicorrect" ,activeColor: '#f15c5e'},
+                                { label: "Numeric", value: "numeric" ,activeColor: '#f15c5e'},
+                                { label: "Text", value: "alphaNumerical" ,activeColor: '#f15c5e'},
                             ]}
                         />
                     </View>
@@ -331,7 +331,7 @@ export default class QuizFacultyPage extends Component{
                                 maximumValue={15}
                                 // thumbTouchSize={{width: 100, height: 100}}
                                 // thumbTintColor='#2697BF'
-                                minimumTrackTintColor="tomato"
+                                minimumTrackTintColor="#f15c5e"
                                 // maximumTrackTintColor="#000000"
                                 trackStyle={{ height: 10, backgroundColor: 'transparent' }}
                                 thumbStyle={{ height: 35, width: 35, backgroundColor: 'transparent' }}
@@ -347,7 +347,7 @@ export default class QuizFacultyPage extends Component{
 
                             <View style>
                                 <View style={{paddingTop:10, marginTop:10}}>
-                                    <Button buttonStyle={styles.mybutton} titleStyle={{color:'white',fontWeight:'normal'}} title="Begin" onPress={this.startKBC} />
+                                    <Button buttonStyle={styles.primaryButton} titleStyle={{color:'white',fontWeight:'normal'}} title="Begin" onPress={this.startKBC} />
                                 </View>
                             </View>
                         </View>
@@ -378,7 +378,7 @@ export default class QuizFacultyPage extends Component{
                                         ? Dimensions.window.width-50
                                         :"100%"
                                 }]}>
-                                <Button buttonStyle={styles.mybutton}
+                                <Button buttonStyle={styles.primaryButton}
                                         titleStyle={{color:'white',fontWeight:'normal'}}
                                         style={styles.buttonMessage}
                                         title={"Start Another Quiz"}
@@ -415,12 +415,12 @@ export default class QuizFacultyPage extends Component{
                             this.props.setQuizState()
                         }}
                         digitStyle={{backgroundColor: '#FFF'}}
-                        digitTxtStyle={{color: 'tomato'}}
+                        digitTxtStyle={{color: '#f15c5e'}}
                         timeToShow={['M', 'S']}
                         timeLabels={{m: 'Min', s: 'Sec'}}
                     />
                     <View>
-                        <Button buttonStyle={styles.mybutton} titleStyle={{color:'white',fontWeight:'normal'}} title='Cancel' onPress={()=>{
+                        <Button buttonStyle={styles.primaryButton} titleStyle={{color:'white',fontWeight:'normal'}} title='Cancel' onPress={()=>{
                              this.startKBC("stop").then(r => "")}} />
                     </View>
                     {this.props.quizType==="alphaNumerical"
@@ -441,7 +441,7 @@ export default class QuizFacultyPage extends Component{
                             {this.state.error ? <Text style={styles.errorMessage}>{this.state.error}</Text> : <Text/>}
 
                             <Button style={styles.buttonMessage}
-                                buttonStyle={styles.mybutton}
+                                buttonStyle={styles.primaryButton}
                                 titleStyle={{color:'white',fontWeight:'normal'}}
                                 title="Submit"
                                 onPress={()=>{
@@ -489,7 +489,7 @@ export default class QuizFacultyPage extends Component{
                             {this.state.error ? <Text style={styles.errorMessage}>{this.state.error}</Text> : <Text/>}
 
                             <Button style={styles.buttonMessage}
-                                buttonStyle={styles.mybutton}
+                                buttonStyle={styles.primaryButton}
                                 titleStyle={{color:'white',fontWeight:'normal'}}
                                 title="Submit"
                                 onPress={()=>{
@@ -519,12 +519,15 @@ export default class QuizFacultyPage extends Component{
 
 }
 const styles = StyleSheet.create({
-    mybutton:{
-        backgroundColor: 'tomato', 
+    primaryButton:{
+        backgroundColor: '#f15c5e', 
         borderColor : 'black',
         borderRadius:20,
-        marginTop:30,
-        marginBottom:30
+        borderWidth:2,
+        marginTop:10,
+        marginBottom:10,
+        width: '100%',
+        alignSelf: "center",
     },
     safeContainer: {
         flex: 1,

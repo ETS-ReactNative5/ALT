@@ -173,8 +173,8 @@ export default class FacultyDashBoard extends Component {
                             />
                         ))}
                     </View>
-                    <Button buttonStyle={styles.signout} title="Sign Out" titleStyle={{color:'white',fontWeight:'normal'}} onPress={this.signOut} />
-                    <Button  buttonStyle={styles.account} title="Delete Account" titleStyle={{color:'white',fontWeight:'normal'}} onPress={()=>{this.showAlert()}} />
+                    <Button buttonStyle={styles.primaryButton} title="Sign Out" titleStyle={{color:'white',fontWeight:'normal'}} onPress={this.signOut} />
+                    <Button  buttonStyle={styles.secondaryButton} title="Delete Account" titleStyle={{color:'white',fontWeight:'normal'}} onPress={()=>{this.showAlert()}} />
                 </ScrollView>
             </SafeAreaView>
         );
@@ -209,31 +209,24 @@ const styles = StyleSheet.create({
         paddingTop : 10,
         marginTop: 15
     },
-    signout:{
-        backgroundColor: 'tomato', 
+    primaryButton:{
+        backgroundColor: '#f15c5e', 
         borderColor : 'black',
         borderRadius:20,
-        marginTop:20,
-        marginBottom:20,
-        marginLeft:100,
-        marginRight:100
+        borderWidth:2,
+        marginTop:10,
+        marginBottom:10,
+        width: '60%',
+        alignSelf: "center",
     },
-    account:{
-        backgroundColor: '#333', 
+    secondaryButton:{
+        backgroundColor: '#333333', 
         borderColor : 'black',
         borderRadius:20,
-        marginTop:30,
-        marginBottom:20,
-        marginLeft:100,
-        marginRight:100
-    },
-    create:{
-        backgroundColor: 'tomato', 
-        borderColor : 'black',
-        borderRadius:20,
-        marginTop:20,
-        marginBottom:20,
-        marginLeft:100,
-        marginRight:100
+        borderWidth:2,
+        marginTop:10,
+        marginBottom:10,
+        width: '60%',
+        alignSelf: "center",
     },
 });

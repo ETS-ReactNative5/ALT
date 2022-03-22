@@ -120,7 +120,7 @@ export default class RegisterUser extends Component {
                                 {this.state.error}
                             </Text> : <Text/>}
                         <View>
-                            <Button style={styles.buttonMessage} buttonStyle={styles.mybutton} title="Continue" titleStyle={{color:'white',fontWeight:'normal'}} onPress={this.RegisterUserToFirebase} />
+                            <Button style={styles.buttonMessage} buttonStyle={styles.primaryButton} title="Continue" titleStyle={{color:'white',fontWeight:'normal'}} onPress={this.RegisterUserToFirebase} />
                         </View>
                     </View>
                 </ScrollView>
@@ -177,11 +177,14 @@ const styles = StyleSheet.create({
     buttonMessage: {
         marginTop: 15
     },
-    mybutton:{
-        backgroundColor: 'tomato', 
+    primaryButton:{
+        backgroundColor: '#f15c5e', 
         borderColor : 'black',
         borderRadius:20,
-        marginTop:30,
-        marginBottom:30
+        borderWidth:2,
+        marginTop:10,
+        marginBottom:10,
+        width: '60%',
+        alignSelf: "center",
     },
 });

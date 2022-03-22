@@ -44,7 +44,7 @@ class Courses {
   }
 
   async setImage() {
-    this.imageURL = Math.floor(Math.random() * 8) + 1;
+    this.imageURL = Math.floor(Math.random() * 5) + 1;
   }
 
   getImage() {

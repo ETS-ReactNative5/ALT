@@ -281,7 +281,7 @@ export default class QuizStudentPage extends Component {
                   });
                 }}
                 digitStyle={{backgroundColor: 'white'}}
-                digitTxtStyle={{color: 'tomato'}}
+                digitTxtStyle={{color: '#f15c5e'}}
                 timeToShow={['M', 'S']}
                 timeLabels={{m: 'Min', s: 'Sec'}}
               />
@@ -303,7 +303,7 @@ export default class QuizStudentPage extends Component {
                       <Button
                         style={styles.buttonMessage}
                         titleStyle={{color: 'white', fontWeight: 'normal'}}
-                        buttonStyle={styles.mybutton}
+                        buttonStyle={styles.primaryButton}
                         title="Submit"
                         onPress={this.submitResponse}
                       />
@@ -335,7 +335,7 @@ export default class QuizStudentPage extends Component {
                     <Button
                       style={styles.buttonMessage}
                       titleStyle={{color: 'white', fontWeight: 'normal'}}
-                      buttonStyle={styles.mybutton}
+                      buttonStyle={styles.primaryButton}
                       title="Submit"
                       onPress={this.submitResponse}
                     />
@@ -367,7 +367,7 @@ export default class QuizStudentPage extends Component {
                     <Button
                       style={styles.buttonMessage}
                       titleStyle={{color: 'white', fontWeight: 'normal'}}
-                      buttonStyle={styles.mybutton}
+                      buttonStyle={styles.primaryButton}
                       title="Submit"
                       onPress={this.submitResponse}
                     />
@@ -388,7 +388,7 @@ export default class QuizStudentPage extends Component {
                       <Button
                         style={styles.buttonMessage}
                         titleStyle={{color: 'white', fontWeight: 'normal'}}
-                        buttonStyle={styles.mybutton}
+                        buttonStyle={styles.primaryButton}
                         title="Submit"
                         onPress={this.submitResponse}
                       />
@@ -491,11 +491,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: '#fff',
   },
-  mybutton: {
-    backgroundColor: 'tomato',
-    borderColor: 'black',
-    borderRadius: 20,
-    marginTop: 30,
-    marginBottom: 30,
-  },
+  primaryButton:{
+    backgroundColor: '#f15c5e', 
+    borderColor : 'black',
+    borderRadius:20,
+    borderWidth:2,
+    marginTop:10,
+    marginBottom:10,
+    width: '100%',
+    alignSelf: "center",
+},
 });

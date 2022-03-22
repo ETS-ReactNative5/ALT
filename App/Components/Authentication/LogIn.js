@@ -147,16 +147,14 @@ export default class LogIn extends Component {
                                 {this.state.error}
                             </Text> : <Text/>}
                             <View >
-                                <Button  style={styles.buttonMessage} titleStyle={{color:'white',fontWeight:'normal'}} buttonStyle= {styles.mybutton} titleStyle = {{}} title="Login" onPress={this.LoginUser}/>
+                                <Button  style={styles.buttonMessage} titleStyle={{color:'white',fontWeight:'normal'}} buttonStyle= {styles.primaryButton} title="Login" onPress={this.LoginUser}/>
 
                                 <Button
                                     titleStyle={{color:'white',fontWeight:'normal'}}
-                                    buttonStyle= {{backgroundColor: '#333', borderColor : 'black', borderRadius:20,}}
+                                    buttonStyle= {styles.secondaryButton}
                                     title="Create Account"
                                     onPress={() => this.props.navigation.navigate('Register User')}
                                 />
-
-                                <Text style={styles.or}> </Text>
                                 {Platform.OS==='ios'
                                     ?
                                     <GoogleSigninButton
@@ -238,28 +236,33 @@ const styles = StyleSheet.create({
     buttonMessage: {
         marginTop: 15,
     },
-    or: {
-        color: 'black',
-        marginTop: 10,
-        marginBottom: 10,
-        paddingTop : 10,
-        paddingBottom: 10,
-        alignSelf: "center",
-    },
     googleSigninButton: {
-        width: 192,
-        height: 48,
-        alignSelf: "center",
+        width: '60%',
+        alignSelf:'center',
         borderColor:'#333',
         borderWidth:2,
         borderRadius:20,
+        marginTop: 15,
     },
-    mybutton:{
-        backgroundColor: 'tomato', 
+    primaryButton:{
+        backgroundColor: '#f15c5e', 
         borderColor : 'black',
         borderRadius:20,
-        marginTop:30,
-        marginBottom:30
+        borderWidth:2,
+        marginTop:10,
+        marginBottom:10,
+        width: '100%',
+        alignSelf: "center",
+    },
+    secondaryButton:{
+        backgroundColor: '#333333', 
+        borderColor : 'black',
+        borderRadius:20,
+        borderWidth:2,
+        marginTop:10,
+        marginBottom:10,
+        width: '100%',
+        alignSelf: "center",
     },
     myimage: {
         flex: 1,

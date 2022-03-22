@@ -30,7 +30,7 @@ export default class TabNavigator extends Component{
                         options={{
                             tabBarLabel: 'Home',
                             tabBarIcon: ({focused}) =>(
-                                <Icon name='home' type='font-awesome' size={25} color={focused?"tomato":"grey"}/>
+                                <Icon name='home' type='font-awesome' size={25} color={focused?"#f15c5e":"grey"}/>
                             ),
                         }}
                         initialParams={{
@@ -44,7 +44,7 @@ export default class TabNavigator extends Component{
                         options={{
                             tabBarLabel: 'Quiz',
                             tabBarIcon: ({focused}) =>(
-                                <Icon name='gamepad' type='font-awesome' size={25} color={focused?"tomato":"grey"}/>
+                                <Icon name='gamepad' type='font-awesome' size={25} color={focused?"#f15c5e":"grey"}/>
                             ),
                         }}
                         initialParams={{
@@ -58,7 +58,7 @@ export default class TabNavigator extends Component{
                         options={{
                             tabBarLabel: 'Feedback',
                             tabBarIcon: ({focused}) =>(
-                                <Icon name='comments' type='font-awesome' size={25} color={focused?"tomato":"grey"}/>
+                                <Icon name='comments' type='font-awesome' size={25} color={focused?"#f15c5e":"grey"}/>
                             ),
                         }}
                         initialParams={{
@@ -72,7 +72,7 @@ export default class TabNavigator extends Component{
                         options={{
                             tabBarLabel: 'Students',
                             tabBarIcon: ({focused}) =>(
-                                <Icon name='users' type='font-awesome' size={25} color={focused?"tomato":"grey"}/>
+                                <Icon name='users' type='font-awesome' size={25} color={focused?"#f15c5e":"grey"}/>
                             ),
                         }}
                         initialParams={{
@@ -87,7 +87,7 @@ export default class TabNavigator extends Component{
                         options={{
                             tabBarLabel: 'Settings',
                             tabBarIcon: ({focused}) =>(
-                                <Icon name='cog' type='font-awesome' size={25} color={focused?"tomato":"grey"}/>
+                                <Icon name='cog' type='font-awesome' size={25} color={focused?"#f15c5e":"grey"}/>
                             ),
                         }}
                         initialParams={{

@@ -112,7 +112,7 @@ export default class StudentFeedbackCard extends Component {
           <MultiSlider
             values={[1]}
             trackStyle={{backgroundColor: '#333'}}
-            selectedStyle={{backgroundColor: 'tomato'}}
+            selectedStyle={{backgroundColor: '#f15c5e'}}
             sliderLength={Dimensions.window.width / 1.35}
             onValuesChange={value => {
               this.props.studentResponses(value[0]);

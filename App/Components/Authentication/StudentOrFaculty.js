@@ -143,7 +143,7 @@ export default class StudentOrFaculty extends Component {
                         </Text> : <Text/>}
                     <View >
                         <Button
-                            buttonStyle={styles.mybutton}
+                            buttonStyle={styles.primaryButton}
                             titleStyle={{color:'white',fontWeight:'normal'}}
                             style={styles.buttonMessage}
                             title="Register"
@@ -216,15 +216,17 @@ const styles = StyleSheet.create({
         shadowRadius: 10.00,
         elevation: 15,
 
-        borderColor: 'tomato',
+        borderColor: '#f15c5e',
         borderRadius: 80,
     },
-    mybutton:{
-        backgroundColor: 'tomato', 
+    primaryButton:{
+        backgroundColor: '#f15c5e', 
         borderColor : 'black',
         borderRadius:20,
-        marginTop:30,
-        marginBottom:30
+        borderWidth:2,
+        marginTop:10,
+        marginBottom:10,
+        width: '100%',
+        alignSelf: "center",
     },
-
 });

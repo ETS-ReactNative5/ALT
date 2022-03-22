@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import React, {Component} from 'react';
 import auth from '@react-native-firebase/auth'
 import {
@@ -10,7 +9,6 @@ import {GoogleSignin, statusCodes} from '@react-native-community/google-signin';
 import Faculty from '../../Databases/Faculty';
 import Student from '../../Databases/Student';
 import {CommonActions} from "@react-navigation/native";
-
 
 export default class CheckUserLoggedIn extends Component {
 
@@ -140,10 +138,12 @@ const styles = StyleSheet.create({
         right: 0,
         top: 0,
         bottom: 0,
+        flex:1,
         position: 'absolute',
         alignItems: 'center',
+        alignSelf : 'center',
         justifyContent: 'center',
-        backgroundColor: '#fff'
+        backgroundColor: '#fff',
     }
 });
 

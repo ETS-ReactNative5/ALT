@@ -75,7 +75,7 @@ export default class AnnouncementsAdd extends Component {
 
                 { this.state.error ? <Text style={styles.errorMessage}> {this.state.error}</Text> : <Text/>}
 
-                <View><Button buttonStyle={styles.mybutton} titleStyle={{color:'white',fontWeight:'normal'}} title="Share" onPress={this.addAnnouncement} /></View>
+                <View><Button buttonStyle={styles.primaryButton} titleStyle={{color:'white',fontWeight:'normal'}} title="Share" onPress={this.addAnnouncement} /></View>
             </View>
         );
     }
@@ -118,12 +118,15 @@ const styles = StyleSheet.create({
     buttonMessage: {
         marginTop: 15,
     },
-    mybutton:{
-        backgroundColor: 'tomato', 
+    primaryButton:{
+        backgroundColor: '#f15c5e', 
         borderColor : 'black',
         borderRadius:20,
-        marginTop:30,
-        marginBottom:30
+        borderWidth:2,
+        marginTop:10,
+        marginBottom:10,
+        width: '100%',
+        alignSelf: "center",
     },
 });
 

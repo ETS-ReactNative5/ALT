@@ -63,7 +63,7 @@ export default class StudentAddCourseForm extends Component {
         ) : (
           <Text />
         )}
-                <Button style={styles.buttonMessage} titleStyle={{color:'white',fontWeight:'normal'}} buttonStyle={styles.mybutton} title="Join" onPress={this.joinCourse} />
+                <Button style={styles.buttonMessage} titleStyle={{color:'white',fontWeight:'normal'}} buttonStyle={styles.primaryButton} title="Join" onPress={this.joinCourse} />
 
             </View>
         );
@@ -107,11 +107,14 @@ const styles = StyleSheet.create({
     buttonMessage: {
         marginTop: 15
     },
-    mybutton:{
-        backgroundColor: 'tomato', 
-        borderColor : 'black',
-        borderRadius:20,
-        marginTop:30,
-        marginBottom:30
-    },
+    primaryButton:{
+      backgroundColor: '#f15c5e', 
+      borderColor : 'black',
+      borderRadius:20,
+      borderWidth:2,
+      marginTop:10,
+      marginBottom:10,
+      width: '100%',
+      alignSelf: "center",
+  },
 });

@@ -153,9 +153,9 @@ export default class FeedbackForm extends Component {
               selectedColor={'black'}
               borderColor={'#383030'}
               options={[
-                {label: 'Color Scale', value: '0', activeColor: 'tomato'},
-                {label: 'Likert Scale', value: '1', activeColor: 'tomato'},
-                {label: 'Minute Paper', value: '2', activeColor: 'tomato'},
+                {label: 'Color Scale', value: '0', activeColor: '#f15c5e'},
+                {label: 'Likert Scale', value: '1', activeColor: '#f15c5e'},
+                {label: 'Minute Paper', value: '2', activeColor: '#f15c5e'},
               ]}
             />
           </View>
@@ -180,7 +180,7 @@ export default class FeedbackForm extends Component {
                   maximumValue={15}
                   // thumbTouchSize={{width: 100, height: 100}}
                   // thumbTintColor='#2697BF'
-                  minimumTrackTintColor="tomato"
+                  minimumTrackTintColor="#f15c5e"
                   // maximumTrackTintColor="#000000"
                   trackStyle={{height: 10, backgroundColor: 'transparent'}}
                   thumbStyle={{
@@ -201,7 +201,7 @@ export default class FeedbackForm extends Component {
             </View>
             <View>
               <Button
-                buttonStyle={styles.mybutton}
+                buttonStyle={styles.primaryButton}
                 titleStyle={{color: 'white', fontWeight: 'normal'}}
                 style={styles.buttonMessage}
                 title="Start"
@@ -344,13 +344,16 @@ const styles = StyleSheet.create({
     paddingLeft: 50,
     paddingRight: 50,
   },
-  mybutton: {
-    backgroundColor: 'tomato',
-    borderColor: 'black',
-    borderRadius: 20,
-    marginTop: 30,
-    marginBottom: 30,
-  },
+  primaryButton:{
+    backgroundColor: '#f15c5e', 
+    borderColor : 'black',
+    borderRadius:20,
+    borderWidth:2,
+    marginTop:10,
+    marginBottom:10,
+    width: '100%',
+    alignSelf: "center",
+},
   mydatebutton: {
     backgroundColor: '#333',
     borderColor: 'black',

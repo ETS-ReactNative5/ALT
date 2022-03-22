@@ -283,7 +283,7 @@ export default class FeedbackStudentPage extends Component {
                     this.props.setFeedbackState();
                   }}
                   digitStyle={{backgroundColor: 'white'}}
-                  digitTxtStyle={{color: 'tomato'}}
+                  digitTxtStyle={{color: '#f15c5e'}}
                   timeToShow={['M', 'S']}
                   timeLabels={{m: 'Min', s: 'Sec'}}
                 />
@@ -307,7 +307,7 @@ export default class FeedbackStudentPage extends Component {
               </View>
               <View style={[styles.buttonContainer]}>
                 <Button
-                  buttonStyle={[styles.mybutton]}
+                  buttonStyle={[styles.primaryButton]}
                   titleStyle={{color: 'white', fontWeight: 'normal'}}
                   style={styles.buttonMessage}
                   title="Submit"
@@ -426,11 +426,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: '#fff',
   },
-  mybutton: {
-    backgroundColor: 'tomato',
-    borderColor: 'black',
-    borderRadius: 20,
-    marginTop: 30,
-    marginBottom: 30,
-  },
+  primaryButton:{
+    backgroundColor: '#f15c5e', 
+    borderColor : 'black',
+    borderRadius:20,
+    borderWidth:2,
+    marginTop:10,
+    marginBottom:10,
+    width: '100%',
+    alignSelf: "center",
+},
 });

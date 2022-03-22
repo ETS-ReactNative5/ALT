@@ -85,7 +85,7 @@ export default class FacultySettings extends Component {
             <View style={styles.toggleButtonView}>
               <Text style={styles.toggleText}>Email Responses</Text>
               <Switch
-                trackColor={{false: '#767577', true: 'tomato'}}
+                trackColor={{false: '#767577', true: '#f15c5e'}}
                 thumbColor={
                   this.state.defaultEmailOption ? '#f4f3f4' : '#f4f3f4'
                 }
@@ -128,7 +128,7 @@ export default class FacultySettings extends Component {
 
             <Button
               style={styles.buttonMessage}
-              buttonStyle={styles.mybutton}
+              buttonStyle={styles.primaryButton}
               titleStyle={{color: 'white', fontWeight: 'normal'}}
               title="Update Settings"
               onPress={() => {
@@ -207,11 +207,14 @@ const styles = StyleSheet.create({
     marginBottom: 30,
     paddingBottom: 20,
   },
-  mybutton: {
-    backgroundColor: 'tomato',
-    borderColor: 'black',
-    borderRadius: 20,
-    marginTop: 30,
-    marginBottom: 30,
-  },
+  primaryButton:{
+    backgroundColor: '#f15c5e', 
+    borderColor : 'black',
+    borderRadius:20,
+    borderWidth:2,
+    marginTop:10,
+    marginBottom:10,
+    width: '100%',
+    alignSelf: "center",
+},
 });

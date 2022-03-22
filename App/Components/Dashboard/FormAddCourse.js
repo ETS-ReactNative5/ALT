@@ -94,7 +94,7 @@ export default class FormAddCourse extends Component {
                         {this.state.error}
                     </Text> : <Text/>}
 
-                <Button buttonStyle={styles.create} title="Create" titleStyle={{color:'white',fontWeight:'normal'}} onPress={this.CreateCourse} />
+                <Button buttonStyle={styles.primaryButton} title="Create" titleStyle={{color:'white',fontWeight:'normal'}} onPress={this.CreateCourse} />
 
             </View>
         );
@@ -138,12 +138,15 @@ const styles = StyleSheet.create({
     buttonMessage: {
         marginTop: 5
     },
-    create:{
-        backgroundColor: 'tomato', 
+    primaryButton:{
+        backgroundColor: '#f15c5e', 
         borderColor : 'black',
         borderRadius:20,
-        marginTop:20,
-        marginBottom:20,
+        borderWidth:2,
+        marginTop:10,
+        marginBottom:10,
+        width: '100%',
+        alignSelf: "center",
     },
 });
 

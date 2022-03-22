@@ -286,7 +286,7 @@ export default class FeedbackFacultyPage extends Component {
                   <View style={[styles.buttonRowContainer]}>
                     <Button
                       style={styles.feedbackButtonMessage}
-                      buttonStyle={styles.mybutton}
+                      buttonStyle={styles.primaryButton}
                       titleStyle={{color: 'white', fontWeight: 'normal'}}
                       title={'Start New Feedback'}
                       onPress={() => {
@@ -301,7 +301,7 @@ export default class FeedbackFacultyPage extends Component {
                     />
                     {/* <Button
                       style={styles.feedbackButtonMessage}
-                      buttonStyle={styles.mybutton}
+                      buttonStyle={styles.primaryButton}
                       titleStyle={{color: 'white', fontWeight: 'normal'}}
                       title={'Send Trigger'}
                       onPress={() => {
@@ -313,7 +313,7 @@ export default class FeedbackFacultyPage extends Component {
                   <View style={[styles.buttonRowContainer]}>
                     <Button
                       style={styles.feedbackButtonMessage}
-                      buttonStyle={styles.mybutton}
+                      buttonStyle={styles.primaryButton}
                       titleStyle={{color: 'white', fontWeight: 'normal'}}
                       title={'Retry Fetching Results'}
                       onPress={() => {
@@ -321,7 +321,7 @@ export default class FeedbackFacultyPage extends Component {
                       }}/>
                     <Button
                       style={styles.feedbackButtonMessage}
-                      buttonStyle={styles.mybutton}
+                      buttonStyle={styles.primaryButton}
                       titleStyle={{color: 'white', fontWeight: 'normal'}}
                       title={'Start New Feedback'}
                       onPress={() => {
@@ -358,14 +358,14 @@ export default class FeedbackFacultyPage extends Component {
                         this.props.setFeedbackState();
                       }}
                       digitStyle={{backgroundColor: 'white'}}
-                      digitTxtStyle={{fontFamily: 'arial', color: 'tomato'}}
+                      digitTxtStyle={{fontFamily: 'arial', color: '#f15c5e'}}
                       timeToShow={['D', 'H', 'M', 'S']}
                       timeLabels={{d: 'Day', h: 'Hour', m: 'Min', s: 'Sec'}}
                     />
                   </View>
                   <View style={[styles.buttonContainer]}>
                     <Button
-                      buttonStyle={styles.mybutton}
+                      buttonStyle={styles.primaryButton}
                       titleStyle={{color: 'white', fontWeight: 'normal'}}
                       title=" Start Now"
                       onPress={() => {
@@ -375,7 +375,7 @@ export default class FeedbackFacultyPage extends Component {
                   </View>
                   <View style={[styles.buttonContainer]}>
                     <Button
-                      buttonStyle={styles.mybutton}
+                      buttonStyle={styles.primaryButton}
                       titleStyle={{color: 'white', fontWeight: 'normal'}}
                       title="Extend by 10 mins"
                       onPress={() => {
@@ -404,13 +404,13 @@ export default class FeedbackFacultyPage extends Component {
                     this.props.setFeedbackState();
                 }}
                 digitStyle={{backgroundColor: '#FFF'}}
-                digitTxtStyle={{color: 'tomato'}}
+                digitTxtStyle={{color: '#f15c5e'}}
                 timeToShow={['M', 'S']}
                 timeLabels={{m: 'Min', s: 'Sec'}}
               />
               <View style={[styles.buttonContainer]}>
                 <Button
-                  buttonStyle={styles.mybutton}
+                  buttonStyle={styles.primaryButton}
                   titleStyle={{color: 'white', fontWeight: 'normal'}}
                   style={styles.buttonMessage}
                   title="Cancel"
@@ -590,13 +590,16 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: '#fff',
   },
-  mybutton: {
-    backgroundColor: 'tomato',
-    borderColor: 'black',
-    borderRadius: 20,
-    marginTop: 30,
-    marginBottom: 30,
-  },
+  primaryButton:{
+    backgroundColor: '#f15c5e', 
+    borderColor : 'black',
+    borderRadius:20,
+    borderWidth:2,
+    marginTop:10,
+    marginBottom:10,
+    width: '100%',
+    alignSelf: "center",
+},
   subheading: {
     flex: 1,
     display: 'flex',
