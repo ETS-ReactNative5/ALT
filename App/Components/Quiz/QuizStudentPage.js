@@ -495,7 +495,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#f15c5e', 
     borderColor : 'black',
     borderRadius:20,
-    borderWidth:2,
+    borderWidth:0,
     marginTop:10,
     marginBottom:10,
     width: '100%',

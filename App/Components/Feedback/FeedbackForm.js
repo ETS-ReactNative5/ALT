@@ -5,6 +5,7 @@ import {
   ScrollView,
   StyleSheet,
   View,
+  Image,
   TextInput,
   Animated,
 } from 'react-native';
@@ -14,6 +15,7 @@ import moment from 'moment';
 import Feedback from '../../Databases/Feedback';
 import SwitchSelector from 'react-native-switch-selector';
 import Dimensions from '../../Utils/Dimensions';
+import clockImg from '../../Assets/clock.png';
 export default class FeedbackForm extends Component {
   // TODO change duration based on slider position
 
@@ -102,16 +104,17 @@ export default class FeedbackForm extends Component {
     let kind = this.state.kind;
     let kindElement;
     if (kind == 0) {
-      kind_text = (
-        <Text> Students will be given options: green, yellow and red </Text>
+      kindElement = (
+        <Text>Students will be given options: Green, Yellow and Red</Text>
       );
     } else if (kind == 1) {
       kindElement = (
-        <Text> Students will be given options: 1, 2, 3, 4, 5 </Text>
+        <Text>Students will be given options: 1, 2, 3, 4, 5</Text>
       );
     } else if (kind == 2) {
       kindElement = (
         <View>
+          <Text>Students will be given option to respond to the following questions as short answers</Text>
           <ListItem containerStyle={styles.listContainer}>
             <ListItem.Content>
               <ListItem.Title style={styles.title}>
@@ -126,11 +129,6 @@ export default class FeedbackForm extends Component {
               </ListItem.Title>
             </ListItem.Content>
           </ListItem>
-
-          <Text style={styles.minPaperHelperText}>
-            {' '}
-            Students will provide input in text format{' '}
-          </Text>
         </View>
       );
     }
@@ -169,32 +167,27 @@ export default class FeedbackForm extends Component {
             <View style={styles.container}>
               <View style={styles.slider}>
                 <Text style={styles.sliderText}>
-                  {' '}
-                  Timer: {this.state.duration} min
+                  Time : {this.state.duration} min
                 </Text>
 
                 <Slider
-                  value={this.state.duration}
-                  minimumValue={1}
-                  step={1}
-                  maximumValue={15}
-                  // thumbTouchSize={{width: 100, height: 100}}
-                  // thumbTintColor='#2697BF'
-                  minimumTrackTintColor="#f15c5e"
-                  // maximumTrackTintColor="#000000"
-                  trackStyle={{height: 10, backgroundColor: 'transparent'}}
-                  thumbStyle={{
-                    height: 35,
-                    width: 35,
-                    backgroundColor: 'transparent',
-                  }}
-                  thumbProps={{
-                    Component: Animated.Image,
-                    source: {
-                      uri: 'https://i.ibb.co/Qn6nGyx/Clock.png',
-                    },
-                  }}
-                  onValueChange={value => this.setState({duration: value})}
+                    value={this.state.duration}
+                    minimumValue={1}
+                    step={1}
+                    maximumValue={15}
+                    // thumbTouchSize={{width: 100, height: 100}}
+                    // thumbTintColor='#f15c5e'
+                    minimumTrackTintColor="#f15c5e"
+                    trackStyle={{ height: 10, backgroundColor: 'transparent' }}
+                    thumbStyle={{ height: 35, width: 35, backgroundColor: 'transparent' }}
+                    thumbProps={{
+                        Component: Animated.Image,
+                        source: {
+                            // uri: 'https://i.ibb.co/Qn6nGyx/Clock.png',
+                            uri : Image.resolveAssetSource(clockImg).uri,
+                        },
+                    }}
+                    onValueChange={(value) => this.setState({duration: value})}
                 />
                 <View style={styles.kindElement}>{kindElement}</View>
               </View>
@@ -230,7 +223,7 @@ const styles = StyleSheet.create({
   },
   title: {
     alignSelf: 'flex-start',
-    textAlign: 'left',
+    textAlign: 'justify',
     fontSize: 16,
     color: 'black',
     marginTop: 1,
@@ -239,9 +232,7 @@ const styles = StyleSheet.create({
     paddingBottom: 2,
   },
   kindElement: {
-    marginTop: 20,
-  },
-  minPaperHelperText: {
+    marginBottom: 20,
     marginTop: 20,
   },
   shadow: {
@@ -287,11 +278,10 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.18,
     shadowRadius: 5.0,
     elevation: 24,
-
-    borderColor: '#2697BF',
-    borderRadius: 8,
-    marginTop: 2,
-    marginBottom: 2,
+    borderColor: '#f15c5e',
+    borderWidth: 1,
+    borderRadius: 20,
+    marginTop: 20,
     paddingTop: 2,
     paddingBottom: 2,
   },
@@ -348,7 +338,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#f15c5e', 
     borderColor : 'black',
     borderRadius:20,
-    borderWidth:2,
+    borderWidth:0,
     marginTop:10,
     marginBottom:10,
     width: '100%',
@@ -364,10 +354,12 @@ const styles = StyleSheet.create({
   sliderText: {
     flex: 1,
     display: 'flex',
+    alignSelf: 'center',
     padding: 10,
     fontSize: 18,
     color: 'black',
     marginTop: 5,
+    fontWeight: 'bold',
   },
   slider: {
     display: 'flex',

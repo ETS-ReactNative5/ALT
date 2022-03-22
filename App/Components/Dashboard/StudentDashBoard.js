@@ -183,13 +183,13 @@ export default class StudentDashBoard extends Component {
           </View>
 
           <Button
-            buttonStyle={styles.signout}
+            buttonStyle={styles.primaryButton}
             titleStyle={{color: 'white', fontWeight: 'normal'}}
             title="Sign Out"
             onPress={this.signOut}
           />
           <Button
-            buttonStyle={styles.account}
+            buttonStyle={styles.secondaryButton}
             titleStyle={{color: 'white', fontWeight: 'normal'}}
             title="Delete Account"
             onPress={() => {
@@ -226,7 +226,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#f15c5e', 
     borderColor : 'black',
     borderRadius:20,
-    borderWidth:2,
+    borderWidth:0,
     marginTop:10,
     marginBottom:10,
     width: '60%',
@@ -236,7 +236,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#333333', 
     borderColor : 'black',
     borderRadius:20,
-    borderWidth:2,
+    borderWidth:0,
     marginTop:10,
     marginBottom:10,
     width: '60%',

@@ -131,7 +131,7 @@ const styles = StyleSheet.create({
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
-            height: 5,
+            height: 6,
         },
         shadowOpacity: 0.20,
         shadowRadius: 2.00,
@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
-            height: 12,
+            height: 6,
         },
         shadowOpacity: 0.20,
         shadowRadius: 2.00,
@@ -163,14 +163,16 @@ const styles = StyleSheet.create({
         left: 15,
         right: 5,
         fontSize: 20,
-        top: 15,
+        top: 20,
         color:'white',
+        fontWeight : "bold",
     },
     name: {
         position: 'absolute',
         left: 15,
-        bottom: 15,
+        bottom: 20,
         fontSize: 18,
-        color:'white'
+        color:'white',
+        fontWeight : "bold",
     },
 })

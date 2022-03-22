@@ -121,7 +121,7 @@ export default class  CourseCard extends Component{
                             setCourse : this.setCourse,
                     })}}
                     onLongPress={()=>{this.showActionSheet()}}
-                    title = {this.state.course.courseCode + " "+ this.state.course.courseName}
+                    title = {this.state.course.courseCode + " : "+ this.state.course.courseName}
                     titleStyle={styles.title}
                     containerStyle={styles.container}
                     activeOpacity={0.2}
@@ -168,7 +168,8 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         width : Dimensions.window.width-20,
-        height : Dimensions.window.height/(3.5),
+        // height : Dimensions.window.height/(3.5),
+        height : Dimensions.window.height/(4.5),
         marginTop: 10,
         marginBottom: 10,
         paddingTop : 10,
@@ -176,7 +177,7 @@ const styles = StyleSheet.create({
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
-            height: 12,
+            height: 6,
         },
         shadowOpacity: 0.20,
         shadowRadius: 2.00,
@@ -203,7 +204,8 @@ const styles = StyleSheet.create({
         position: 'absolute',
         left: 15,
         bottom: 25,
-        fontSize: 18,
+        fontSize: 16,
         color:'white',
+        fontWeight : "bold",
     },
 })

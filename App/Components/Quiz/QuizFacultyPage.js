@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {ActivityIndicator, SafeAreaView, ScrollView, StyleSheet, View, TextInput, Animated} from 'react-native';
-import {Slider, Text, Button,Icon} from 'react-native-elements';
+import {Slider, Text, Button, Image} from 'react-native-elements';
 import Quiz from '../../Databases/Quiz';
 import moment from 'moment';
 import Options from './Options';
@@ -12,6 +12,7 @@ import Dimensions from '../../Utils/Dimensions';
 import database from "@react-native-firebase/database";
 import MultiCorrectOptions from './MultiCorrectOptions';
 import {firebase} from '@react-native-firebase/functions';
+import clockImg from '../../Assets/clock.png';
 
 export default class QuizFacultyPage extends Component{
     constructor(props) {
@@ -282,16 +283,15 @@ export default class QuizFacultyPage extends Component{
                                     correctAnswer : "*",
                                 })
                             }}
-                            textStyle={{fontSize:12}}
+                            // textStyle={{fontSize:12}}
                             textColor={'black'}
                             selectedColor={'black'}
                             borderColor={'#383030'}
-                            // hasPadding
                             options={[
-                                { label: "Single-Correct", value: "mcq", activeColor: '#f15c5e'},
-                                { label: "Multi-Correct", value: "multicorrect" ,activeColor: '#f15c5e'},
-                                { label: "Numeric", value: "numeric" ,activeColor: '#f15c5e'},
-                                { label: "Text", value: "alphaNumerical" ,activeColor: '#f15c5e'},
+                                { label: "Single \n Correct", value: "mcq", activeColor: '#f15c5e'},
+                                { label: "Multi \n Correct", value: "multicorrect" ,activeColor: '#f15c5e'},
+                                { label: "Numeric \n Type", value: "numeric" ,activeColor: '#f15c5e'},
+                                { label: "Text \n Type", value: "alphaNumerical" ,activeColor: '#f15c5e'},
                             ]}
                         />
                     </View>
@@ -322,23 +322,23 @@ export default class QuizFacultyPage extends Component{
                     <View style={styles.container}>
                         <View style={styles.slider}>
 
-                            <Text style={styles.sliderText}> Timer: {this.state.time} min</Text>
+                            <Text style={styles.sliderText}> Time : {this.state.time} min</Text>
 
                             <Slider
                                 value={this.state.time}
                                 minimumValue={1}
                                 step={1}
                                 maximumValue={15}
-                                // thumbTouchSize={{width: 100, height: 100}}
-                                // thumbTintColor='#2697BF'
+                                thumbTouchSize={{width: 100, height: 100}}
+                                thumbTintColor='#f15c5e'
                                 minimumTrackTintColor="#f15c5e"
-                                // maximumTrackTintColor="#000000"
                                 trackStyle={{ height: 10, backgroundColor: 'transparent' }}
                                 thumbStyle={{ height: 35, width: 35, backgroundColor: 'transparent' }}
                                 thumbProps={{
                                     Component: Animated.Image,
                                     source: {
-                                        uri: 'https://i.ibb.co/Qn6nGyx/Clock.png',
+                                        // uri: 'https://i.ibb.co/Qn6nGyx/Clock.png',
+                                        uri : Image.resolveAssetSource(clockImg).uri,
                                     },
                                 }}
                                 onValueChange={(value) => this.setState({time: value})}
@@ -418,6 +418,7 @@ export default class QuizFacultyPage extends Component{
                         digitTxtStyle={{color: '#f15c5e'}}
                         timeToShow={['M', 'S']}
                         timeLabels={{m: 'Min', s: 'Sec'}}
+                        style={{paddingBottom:20}}
                     />
                     <View>
                         <Button buttonStyle={styles.primaryButton} titleStyle={{color:'white',fontWeight:'normal'}} title='Cancel' onPress={()=>{
@@ -425,12 +426,12 @@ export default class QuizFacultyPage extends Component{
                     </View>
                     {this.props.quizType==="alphaNumerical"
                         ?
-                        <View>
-                            <Text style={[styles.heading,{fontSize : 20, }]}>
+                        <View style = {{width:Dimensions.window.width-200, alignSelf:'center'}}>
+                            <Text style={[styles.heading,{fontSize : 15}]}>
                                 Provide Answer for Auto-grading
                             </Text>
                             <TextInput
-                                style={styles.textInput}
+                                style={[styles.textInput,{width:'90%', fontSize:15}]}
                                 maxLength={30}
                                 textAlign={'center'}
                                 onChangeText={text => {this.setState({
@@ -443,7 +444,7 @@ export default class QuizFacultyPage extends Component{
                             <Button style={styles.buttonMessage}
                                 buttonStyle={styles.primaryButton}
                                 titleStyle={{color:'white',fontWeight:'normal'}}
-                                title="Submit"
+                                title="Update"
                                 onPress={()=>{
                                     this.dbUpdateCorrectAnswer()
                                         .then(r => console.log("Answer Updated"))
@@ -457,12 +458,12 @@ export default class QuizFacultyPage extends Component{
                         ?
                         <View>
                             <View style={{flexDirection:'row'}}>
-                                <View style={{width: Dimensions.window.width/2, float:'left'}}>    
-                                    <Text style={[styles.heading,{fontSize : 20, }]}>
+                                <View style={{width: Dimensions.window.width/2-60, float:'left'}}>    
+                                    <Text style={[styles.heading,{fontSize : 15, }]}>
                                         Provide Answer for Auto-grading
                                     </Text>
                                     <TextInput
-                                        style={[styles.textInput, {width:'90%'}]}
+                                        style={[styles.textInput, {width:'90%', fontSize:15}]}
                                         maxLength={30}
                                         textAlign={'center'}
                                         onChangeText={text => {this.setState({
@@ -471,12 +472,12 @@ export default class QuizFacultyPage extends Component{
                                         value={this.state.option==="*"?"":this.state.option}
                                     />
                                 </View>
-                                <View style={{width: Dimensions.window.width/2}}>
-                                    <Text style={[styles.heading,{fontSize : 20, }]}>
+                                <View style={{width: Dimensions.window.width/2-60}}>
+                                    <Text style={[styles.heading,{fontSize : 15, }]}>
                                         Provide Acceptable Absolute Error Amount
                                     </Text>
                                     <TextInput
-                                        style={[styles.textInput, {width:'90%'}]}
+                                        style={[styles.textInput, {width:'90%', fontSize:15}]}
                                         maxLength={30}
                                         textAlign={'center'}
                                         onChangeText={text => {this.setState({
@@ -491,7 +492,7 @@ export default class QuizFacultyPage extends Component{
                             <Button style={styles.buttonMessage}
                                 buttonStyle={styles.primaryButton}
                                 titleStyle={{color:'white',fontWeight:'normal'}}
-                                title="Submit"
+                                title="Update"
                                 onPress={()=>{
                                     this.dbUpdateCorrectAnswer()
                                         .then(r => console.log("Answer Updated"))
@@ -523,7 +524,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#f15c5e', 
         borderColor : 'black',
         borderRadius:20,
-        borderWidth:2,
+        borderWidth:0,
         marginTop:10,
         marginBottom:10,
         width: '100%',
@@ -533,22 +534,22 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: 'transparent',
     },
-    sliderText : {
+    sliderText: {
         flex: 1,
-        display: "flex",
+        display: 'flex',
+        alignSelf: 'center',
         padding: 10,
-        fontSize : 18,
+        fontSize: 18,
         color: 'black',
         marginTop: 5,
-    },
+        fontWeight: 'bold',
+      },
     selector:{
         flex: 1,
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         paddingTop : 25,
-        padding: 5,
-        marginTop: 5,
         textAlign: 'center',
     },
     textInput: {
@@ -619,7 +620,6 @@ const styles = StyleSheet.create({
         marginBottom: 30,
         paddingBottom : 20,
         textAlign: 'center',
-
     },
     buttonContainer: {
         flex: 1,
@@ -630,14 +630,6 @@ const styles = StyleSheet.create({
         paddingBottom:20,
         paddingLeft : 20,
         paddingRight : 20
-    },
-    or: {
-        marginTop: 130,
-        color: 'grey',
-        alignSelf: "center",
-        fontSize: 22,
-        paddingBottom: 20,
-        fontWeight : "bold"
     },
     slider: {
         display: "flex",
