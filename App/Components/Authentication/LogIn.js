@@ -240,7 +240,7 @@ const styles = StyleSheet.create({
         width: '60%',
         alignSelf:'center',
         borderColor:'#333',
-        borderWidth:0,
+        borderWidth:2,
         borderRadius:20,
         marginTop: 15,
     },

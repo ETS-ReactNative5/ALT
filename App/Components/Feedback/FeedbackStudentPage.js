@@ -253,7 +253,7 @@ export default class FeedbackStudentPage extends Component {
                 <Text style={styles.or}> No current feedback form!</Text>
                 <View style={styles.invisible}>
                   <CountDown
-                    until={this.props.beforeDuration + 5}
+                    until={this.props.beforeDuration}
                     onFinish={() => {
                       this.getTopics().then(r => {});
                       this.props.setFeedbackState();

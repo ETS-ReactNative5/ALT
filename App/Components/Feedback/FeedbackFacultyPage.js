@@ -349,7 +349,7 @@ export default class FeedbackFacultyPage extends Component {
                   <View style={styles.container}>
                     <Text style={styles.text1}>Scheduled to go live in</Text>
                     <CountDown
-                      until={this.props.beforeDuration + 5}
+                      until={this.props.beforeDuration}
                       size={24}
                       onFinish={() => {
                         this.checkEmailSent().then(r => {
@@ -392,7 +392,7 @@ export default class FeedbackFacultyPage extends Component {
                 Feedback {this.props.feedbackCount} in Progress
               </Text>
               <CountDown
-                until={this.props.currentDuration + 5}
+                until={this.props.currentDuration}
                 size={30}
                 onFinish={() => {
                     this.setState({
