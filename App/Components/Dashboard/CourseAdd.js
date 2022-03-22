@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
         flex: 1,
         display: 'flex',
         backgroundColor:'white',
-        maxHeight : Dimensions.window.height/1.6,
+        maxHeight : Dimensions.window.height/2,
         maxWidth : Dimensions.window.width-40,
         marginTop: 50,
         marginLeft: 20,

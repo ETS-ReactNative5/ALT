@@ -40,7 +40,6 @@ export default class AnnouncementCard extends Component{
                     underlayColor="#ffffff00"
                     key = {this.props.key}
                     containerStyle={styles.container}
-                    bottomDivider
                 >
                     <ListItem.Content>
                         <ListItem.Title style={styles.title}>
@@ -51,9 +50,10 @@ export default class AnnouncementCard extends Component{
                         </ListItem.Subtitle>
                     </ListItem.Content>
                     <Badge
-                        value = {"  "+moment(this.props.announcement.date,'DD/MM/YYYY HH:mm:ss').add(moment().utcOffset(), "minutes").format('DD/MM/YYYY HH:mm:ss')+"  "}
-                        containerStyle = {styles.date}
-                        textStyle={{color:"white", fontSize:10}}
+                        value = {"  "+moment(this.props.announcement.date,'DD/MM/YYYY HH:mm:ss').add(moment().utcOffset(), "minutes").format('DD/MM/YYYY - HH:mm')+"  "}
+                        badgeStyle={styles.badge}
+                        containerStyle = {styles.badge}
+                        textStyle={styles.stamp}
                     />
                 </ListItem>
                 <ActionSheet
@@ -91,6 +91,8 @@ const styles = StyleSheet.create({
         shadowRadius: 2.50,
         elevation: 1,
         borderRadius: 25,
+        borderColor: '#f15c5e',
+        borderWidth: 2,
     },
     title: {
         alignSelf:'flex-start',
@@ -103,15 +105,19 @@ const styles = StyleSheet.create({
         paddingBottom : 5,
         fontWeight : "bold",
     },
-    date: {
+    badge: {
         position : 'absolute',
         top : 8,
         right : 10,
         borderRadius: 25,
-        // marginTop: 0,
-        // paddingTop : 0,
-        // marginBottom: 30,
-        // paddingBottom : 30,
+        width: 120,
+        backgroundColor: '#f15c5e',
+    },
+    stamp: {
+        color: 'white',
+        fontSize: 10,
+        borderRadius: 25,
+        backgroundColor: '#f15c5e',
     },
     caption: {
         fontSize: 13,
