@@ -15,7 +15,6 @@ import Dimensions from '../../Utils/Dimensions';
 import FeedbackForm from './FeedbackForm';
 import FeedbackResultsList from './FeedbackResultsList';
 export default class FeedbackFacultyPage extends Component {
-  // TODO change duration at deployment
   duration = 5;
 
   constructor(props) {

@@ -105,7 +105,7 @@ export default class StudentFeedbackCard extends Component {
       return (
         <View style={styles.grid}>
           <View style={styles.row}>
-            <Text>Low </Text>
+            <Text>Low</Text>
             <Text>High</Text>
           </View>
           <View style={[styles.column]}>{this.renderScale()}</View>
@@ -170,8 +170,8 @@ export default class StudentFeedbackCard extends Component {
 }
 const styles = StyleSheet.create({
   grid: {
-    marginTop: 6,
-    marginBottom: 6,
+    marginTop: 20,
+    marginBottom: 20,
     paddingTop: 6,
     paddingBottom: 6,
     alignItems: 'center',
@@ -229,7 +229,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     width: Dimensions.window.width / 2.8,
-
     bottom: -20,
   },
   active: {
@@ -238,13 +237,14 @@ const styles = StyleSheet.create({
     color: '#333',
   },
   line: {
-    fontSize: 10,
+    fontSize: 12,
     textAlign: 'center',
     color: '#333',
+    fontWeight: 'bold',
   },
   space: {
-    paddingLeft: Dimensions.window.width / 6,
-    paddingRight: 0,
+    paddingLeft: Dimensions.window.width / 11,
+    paddingRight: Dimensions.window.width / 11,
   },
   selector: {
     flex: 1,

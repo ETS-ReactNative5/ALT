@@ -34,16 +34,12 @@ export default class AnnouncementsAdd extends Component {
                 description,
                 dateAndTime
             ).then(()=>{
-
                     this.setState({
                         heading: '',
                         description : ''
                     })
-
                     this.props.toggle()
-
                 })
-
         }
 
     }

@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
-
 import {StyleSheet,Text,View,TextInput,} from 'react-native';
 import {Button} from 'react-native-elements';
-
 import Courses from '../../Databases/Courses';
 
 export default class StudentAddCourseForm extends Component {

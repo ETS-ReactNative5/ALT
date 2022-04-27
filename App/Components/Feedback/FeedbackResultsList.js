@@ -283,15 +283,9 @@ export default class FeedbackResultsList extends Component {
                 What are the three most important things that you learnt?
               </Text>
               {this.showMinutePaperSummary(0)}
-              {/* <Text style = {styles.answers}>Present Value of Future Payments</Text>
-              <Text style = {styles.answers}>Forex Reserves</Text>
-              <Text style = {styles.answers}>Straight Line Depreciation</Text> */}
               <Text style={[styles.questions, styles.shadow]}>
                 What are the things that remain doubtful?
               </Text>
-              {/* <Text style = {styles.answers}>Estimating price using Dividend discount model</Text>
-              <Text style = {styles.answers}>Imports and Exports dependence on Forex Rates</Text>
-              <Text style = {styles.answers}>Risk Adjusted Returns</Text> */}
               {this.showMinutePaperSummary(1)}
             </View>
             ) : (

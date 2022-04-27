@@ -301,7 +301,6 @@ export default class QuizStudentPage extends Component {
                     )}
                     <View>
                       <Button
-                        style={styles.buttonMessage}
                         titleStyle={{color: 'white', fontWeight: 'normal'}}
                         buttonStyle={styles.primaryButton}
                         title="Submit"
@@ -324,7 +323,7 @@ export default class QuizStudentPage extends Component {
                         option: text,
                       });
                     }}
-                    value={this.state.option}
+                    // value={this.state.option}
                   />
                   {this.state.error ? (
                     <Text style={styles.errorMessage}>{this.state.error}</Text>
@@ -333,7 +332,6 @@ export default class QuizStudentPage extends Component {
                   )}
                   <View style={[{paddingTop: 20}]}>
                     <Button
-                      style={styles.buttonMessage}
                       titleStyle={{color: 'white', fontWeight: 'normal'}}
                       buttonStyle={styles.primaryButton}
                       title="Submit"
@@ -344,7 +342,7 @@ export default class QuizStudentPage extends Component {
               ) : this.props.quizType === 'numeric' ? (
                 <View style={{paddingTop: 20}}>
                   <Text style={[styles.heading, {fontSize: 18, marginTop: 15}]}>
-                    Please Provide Concise Answer
+                    Please Provide Numerical Answer
                   </Text>
                   <TextInput
                     style={styles.textInput}
@@ -356,7 +354,7 @@ export default class QuizStudentPage extends Component {
                         option: text,
                       });
                     }}
-                    value={this.state.option}
+                    // value={this.state.option}
                   />
                   {this.state.error ? (
                     <Text style={styles.errorMessage}>{this.state.error}</Text>
@@ -365,7 +363,6 @@ export default class QuizStudentPage extends Component {
                   )}
                   <View style={[{paddingTop: 20}]}>
                     <Button
-                      style={styles.buttonMessage}
                       titleStyle={{color: 'white', fontWeight: 'normal'}}
                       buttonStyle={styles.primaryButton}
                       title="Submit"
@@ -386,7 +383,6 @@ export default class QuizStudentPage extends Component {
                     )}
                     <View>
                       <Button
-                        style={styles.buttonMessage}
                         titleStyle={{color: 'white', fontWeight: 'normal'}}
                         buttonStyle={styles.primaryButton}
                         title="Submit"

@@ -34,13 +34,8 @@ export default class FormAddCourse extends Component {
             courses.setRoom(room)
             courses.setPassCode()
             await courses.setImage()
-            //Passing Faculty object to add his Url (Signature)
             courses.addInstructors(this.props.instructor)
-
-            //Create course
             courses.createCourse()
-
-            //Adding Course to Faculty
             const pass = courses.getPassCode()
             await courses.getCourse(pass)
                 .then(async value => {

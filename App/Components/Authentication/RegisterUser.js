@@ -70,7 +70,6 @@ export default class RegisterUser extends Component {
                 }
             )
         }
-
     }
 
     render(){

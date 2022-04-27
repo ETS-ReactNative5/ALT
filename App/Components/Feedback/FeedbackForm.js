@@ -17,7 +17,6 @@ import SwitchSelector from 'react-native-switch-selector';
 import Dimensions from '../../Utils/Dimensions';
 import clockImg from '../../Assets/clock.png';
 export default class FeedbackForm extends Component {
-  // TODO change duration based on slider position
 
   constructor(props) {
     super(props);
