@@ -29,7 +29,7 @@ export default class QuizFacultyPage extends Component{
             error : null,
             date : "",
             results :"",
-            typeofQuiz : "mcq",
+            typeofQuiz : "SingleCorrect",
             loading : true,
             quizNumber : "",
             errorRate : "*",
@@ -119,7 +119,7 @@ export default class QuizFacultyPage extends Component{
                 error : null,
                 date : "",
                 results :"",
-                typeofQuiz : "mcq",
+                typeofQuiz : "SingleCorrect",
             })
             this.props.setQuizState()
             const kbc = new Quiz()
@@ -216,7 +216,7 @@ export default class QuizFacultyPage extends Component{
                 error : "Please type Correct Answer"
             })
         }
-        else if(this.state.typeofQuiz ==="numeric" && (isNaN(parseFloat(option)) || isNaN(parseFloat(error))) )
+        else if(this.state.typeofQuiz ==="Numeric" && (isNaN(parseFloat(option)) || isNaN(parseFloat(error))) )
         {
             this.setState({
                 error : "Please type Numerical Response"
@@ -288,29 +288,29 @@ export default class QuizFacultyPage extends Component{
                             selectedColor={'black'}
                             borderColor={'#383030'}
                             options={[
-                                { label: "Single \n Correct", value: "mcq", activeColor: '#f15c5e'},
-                                { label: "Multi \n Correct", value: "multicorrect" ,activeColor: '#f15c5e'},
-                                { label: "Numeric \n Type", value: "numeric" ,activeColor: '#f15c5e'},
-                                { label: "Text \n Type", value: "alphaNumerical" ,activeColor: '#f15c5e'},
+                                { label: "Single \n Correct", value: "SingleCorrect", activeColor: '#f15c5e'},
+                                { label: "Multi \n Correct", value: "MultiCorrect" ,activeColor: '#f15c5e'},
+                                { label: "Numeric \n Type", value: "Numeric" ,activeColor: '#f15c5e'},
+                                { label: "Text \n Type", value: "Text" ,activeColor: '#f15c5e'},
                             ]}
                         />
                     </View>
                     {
-                    this.state.typeofQuiz === "mcq"
+                    this.state.typeofQuiz === "SingleCorrect"
                     ?
                         <View>
                             <Options optionValue={this.setOption} icon={this.state.icon}/>
                         </View>
                     :
-                    this.state.typeofQuiz ==="alphaNumerical"
+                    this.state.typeofQuiz ==="Text"
                     ?
                         <Text/>
                     :
-                    this.state.typeofQuiz ==="numeric"
+                    this.state.typeofQuiz ==="Numeric"
                     ?
                         <Text/>
                     :
-                    this.state.typeofQuiz ==="multicorrect"
+                    this.state.typeofQuiz ==="MultiCorrect"
                     ?
                     <View>
                         <MultiCorrectOptions optionValue={this.setOption}/>
@@ -347,7 +347,7 @@ export default class QuizFacultyPage extends Component{
 
                             <View style>
                                 <View style={{paddingTop:10, marginTop:10}}>
-                                    <Button buttonStyle={styles.primaryButton} titleStyle={{color:'white',fontWeight:'normal'}} title="Begin" onPress={this.startKBC} />
+                                    <Button buttonStyle={styles.primaryButton} titleStyle={{color:'white',fontWeight:'normal'}} title="Start" onPress={this.startKBC} />
                                 </View>
                             </View>
                         </View>
@@ -368,13 +368,13 @@ export default class QuizFacultyPage extends Component{
                             />
                             <View style={[
                                 styles.buttonContainer,
-                                { width: this.props.quizType==="alphaNumerical"
+                                { width: this.props.quizType==="Text"
                                         ? Dimensions.window.width-50
                                         :"100%"
                                 }]}>
                             <View style={[
                                 styles.buttonContainer,
-                                { width: this.props.quizType==="numeric"
+                                { width: this.props.quizType==="Numeric"
                                         ? Dimensions.window.width-50
                                         :"100%"
                                 }]}>
@@ -393,7 +393,7 @@ export default class QuizFacultyPage extends Component{
                                                 error : null,
                                                 date : "",
                                                 results :"",
-                                                typeofQuiz : "mcq",
+                                                typeofQuiz : "SingleCorrect",
                                                 quizNumber : "",
                                             })
                                         }}/>
@@ -424,7 +424,7 @@ export default class QuizFacultyPage extends Component{
                         <Button buttonStyle={styles.primaryButton} titleStyle={{color:'white',fontWeight:'normal'}} title='Cancel' onPress={()=>{
                              this.startKBC("stop").then(r => "")}} />
                     </View>
-                    {this.props.quizType==="alphaNumerical"
+                    {this.props.quizType==="Text"
                         ?
                         <View style = {{width:Dimensions.window.width-200, alignSelf:'center'}}>
                             <Text style={[styles.heading,{fontSize : 15}]}>
@@ -454,7 +454,7 @@ export default class QuizFacultyPage extends Component{
                         :
                         <Text/>
                     }
-                    {this.props.quizType==="numeric"
+                    {this.props.quizType==="Numeric"
                         ?
                         <View>
                             <View style={{flexDirection:'row'}}>

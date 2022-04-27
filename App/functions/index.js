@@ -117,7 +117,7 @@ function emailTemplate(
     </body>
     </html>
     `
-        : type === 'mcq'
+        : type === 'SingleCorrect'
           ? `
       <html>
       <body>
@@ -141,7 +141,7 @@ function emailTemplate(
       </body>
       </html>
       `
-          : type === 'alphaNumerical' || type === 'multicorrect' || type === 'numeric'
+          : type === 'Text' || type === 'MultiCorrect' || type === 'Numeric'
             ? `
       <html>
           <head>
@@ -408,7 +408,7 @@ async function getAllAnnouncement(passCode) {
   }
 }
 function autoGrader(studentAnswer, correctAnswer, errorRate, type) {
-  if (type === 'alphaNumerical') {
+  if (type === 'Text') {
     studentAnswer = studentAnswer
       .trim()
       .toUpperCase()
@@ -421,7 +421,7 @@ function autoGrader(studentAnswer, correctAnswer, errorRate, type) {
     if (studentAnswer === correctAnswer) return 1;
     else if (!(studentAnswer.search(correctAnswer) === -1)) return 1;
     else return 0;
-  } else if (type === 'numeric') {
+  } else if (type === 'Numeric') {
     studentAnswer = parseFloat(studentAnswer.trim().replace(/,/g, ''));
     correctAnswer = parseFloat(correctAnswer.trim().replace(/,/g, ''));
     errorRate = parseFloat(errorRate.trim().replace(/,/g, ''));
@@ -477,7 +477,7 @@ async function getQuizResponse(passCode, startTime, endTime, type) {
         const temp2 = moment(endTime, 'DD/MM/YYYY HH:mm:ss');
 
         if (temp1 <= temp2 && temp1 >= temp) {
-          if (type === 'mcq') {
+          if (type === 'SingleCorrect') {
             list[keys['answer']] += 1;
           } else {
             let answer = keys['answer']
@@ -492,7 +492,7 @@ async function getQuizResponse(passCode, startTime, endTime, type) {
           }
         }
       });
-      if (type === 'mcq') {
+      if (type === 'SingleCorrect') {
         ans = list;
       } else {
         ans = dict;
@@ -558,7 +558,7 @@ async function QuizResponseMailer(
     await transporter.sendMail({
       from: 'atlapp2021@gmail.com',
       to: email,
-      subject: 'Quiz Responses : ' + courseName,
+      subject: courseName+' Quiz Responses : ' + type,
       text: '',
       html: emailTemplate(courseName, date, results, type, 0, 0),
       attachments: [
@@ -779,7 +779,7 @@ async function FeedbackResponseMailer(
       await transporter.sendMail({
         from: 'atlapp2021@gmail.com',
         to: email,
-        subject: 'Feedback Responses : ' + courseName,
+        subject: courseName+' Feedback Responses : ' + 'Minute Paper',
         text: '',
         html: emailTemplate(courseName, date, results, type, 0, 0),
         attachments: [
@@ -790,10 +790,11 @@ async function FeedbackResponseMailer(
         ],
       });
     } else {
+      const type_info = type == 'Feedback0' ? 'Color Scale' : 'Likert Scale';
       await transporter.sendMail({
         from: 'atlapp2021@gmail.com',
         to: email,
-        subject: 'Feedback Responses : ' + courseName,
+        subject: courseName+' Feedback Responses : ' + type_info,
         text: '.',
         html: emailTemplate(courseName, date, results, type, 0, 0),
       });
@@ -1469,14 +1470,14 @@ exports.quizNotification = functions.database
       const { _data } = after;
       const courseName = await getCourseNameFromPasscode(_data.passCode);
       let type = 'single-correct';
-      if (_data.quizType === 'multicorrect') {
+      if (_data.quizType === 'MultiCorrect') {
         type = 'multi-correct';
       }
-      if (_data.quizType === 'alphaNumerical') {
-        type = 'alpha-numeric';
+      if (_data.quizType === 'Text') {
+        type = 'alpha-Numeric';
       }
-      if (_data.quizType === 'numeric') {
-        type = 'numeric';
+      if (_data.quizType === 'Numeric') {
+        type = 'Numeric';
       }
 
       console.log('Quiz Notification executing');

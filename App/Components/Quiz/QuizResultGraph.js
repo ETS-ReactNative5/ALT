@@ -27,7 +27,7 @@ export default class QuizResultGraph extends Component {
         const Kbc = new Quiz()
 
         await Kbc.getTiming(this.props.passCode).then(async r =>{
-            if(this.props.quizType==='mcq'){
+            if(this.props.quizType==='SingleCorrect'){
                 await kbcResponse.getAllMcqResponse(this.props.passCode, r["startTime"], r["endTime"] )
                     .then( values  =>{
                         this.setState({
@@ -41,7 +41,7 @@ export default class QuizResultGraph extends Component {
                     this.props.QuizMailer()
                 }
             }
-            else if(this.props.quizType==='alphaNumerical' || this.props.quizType=="multicorrect" || this.props.quizType=="numeric"){
+            else if(this.props.quizType==='Text' || this.props.quizType=="MultiCorrect" || this.props.quizType=="Numeric"){
                 await kbcResponse.getAllAlphaNumericalResponse(this.props.passCode, r["startTime"], r["endTime"] )
                     .then( async values  =>{
                         //https://stackoverflow.com/questions/25500316/sort-a-dictionary-by-value-in-javascript
@@ -116,7 +116,7 @@ export default class QuizResultGraph extends Component {
                     Results : Quiz {this.state.quizNumber} ({this.props.date.split(" ")[0]})
                 </Text>
                 <View>
-                {this.props.quizType==="mcq"?
+                {this.props.quizType==="SingleCorrect"?
                     <View style={styles.container}>
                         <PieChart
                             data={data}
@@ -130,7 +130,7 @@ export default class QuizResultGraph extends Component {
                         />
                     </View>
                     :
-                    this.props.quizType==="alphaNumerical" || this.props.quizType=="multicorrect" || this.props.quizType=="numeric"
+                    this.props.quizType==="Text" || this.props.quizType=="MultiCorrect" || this.props.quizType=="Numeric"
                     ?
                     <View style={styles.numContainer}>
                         <Text style={styles.body1}>Top 5 Answers</Text>

@@ -119,7 +119,7 @@ export default class QuizStudentPage extends Component {
       this.setState({
         error: 'Please answer',
       });
-    } else if (this.props.quizType === 'numeric' && isNaN(parseFloat(option))) {
+    } else if (this.props.quizType === 'Numeric' && isNaN(parseFloat(option))) {
       this.setState({
         error: 'Please Input a Numerical Response',
       });
@@ -285,7 +285,7 @@ export default class QuizStudentPage extends Component {
                 timeToShow={['M', 'S']}
                 timeLabels={{m: 'Min', s: 'Sec'}}
               />
-              {this.props.quizType === 'mcq' ? (
+              {this.props.quizType === 'SingleCorrect' ? (
                 <View style={{paddingRight: 20, paddingLeft: 20}}>
                   <Options
                     optionValue={this.setOption}
@@ -309,7 +309,7 @@ export default class QuizStudentPage extends Component {
                     </View>
                   </View>
                 </View>
-              ) : this.props.quizType === 'alphaNumerical' ? (
+              ) : this.props.quizType === 'Text' ? (
                 <View style={{paddingTop: 20}}>
                   <Text style={[styles.heading, {fontSize: 18, marginTop: 15}]}>
                     Please Provide Concise Answer
@@ -339,7 +339,7 @@ export default class QuizStudentPage extends Component {
                     />
                   </View>
                 </View>
-              ) : this.props.quizType === 'numeric' ? (
+              ) : this.props.quizType === 'Numeric' ? (
                 <View style={{paddingTop: 20}}>
                   <Text style={[styles.heading, {fontSize: 18, marginTop: 15}]}>
                     Please Provide Numerical Answer
@@ -370,7 +370,7 @@ export default class QuizStudentPage extends Component {
                     />
                   </View>
                 </View>
-              ) : this.props.quizType === 'multicorrect' ? (
+              ) : this.props.quizType === 'MultiCorrect' ? (
                 <View style={{paddingRight: 20, paddingLeft: 20}}>
                   <MultiCorrectOptions optionValue={this.setOption} />
                   <View style={{padding: 40}}>
